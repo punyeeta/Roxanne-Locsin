@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Menu, X, Sun, Moon } from "lucide-react"
+import portrait from "@/assets/Roxanne.png"
 
 type NavbarProps = {
   theme: "dark" | "light"
@@ -23,8 +24,8 @@ function Navbar({ theme, onThemeToggle, isAboutOpen: _isAboutOpen, setIsAboutOpe
   const navItems = [
     { label: "About", href: "#about" },
     { label: "Projects", href: "#projects" },
+    { label: "Timeline", href: "#timeline" },
     { label: "Skills", href: "#skills" },
-    { label: "Resume", href: "#resume" },
     { label: "Contact", href: "#contact" },
   ]
 
@@ -63,14 +64,19 @@ function Navbar({ theme, onThemeToggle, isAboutOpen: _isAboutOpen, setIsAboutOpe
           }`}
       >
         <div className="max-w-[85rem] mx-auto px-6 flex items-center justify-between">
-          {/* Logo */}
-          <a
-            href="#"
-            onClick={(e) => handleLinkClick(e, "#")}
-            className="font-heading text-2xl font-extrabold tracking-tight text-primary transition-transform duration-300 hover:scale-105 active:scale-95"
-          >
-            R<span className="text-accent font-black">.</span>
-          </a>
+          {/* Logo & Profile Group */}
+          <div className="flex items-center gap-3">
+            <div className="md:hidden w-8 h-8 rounded-full overflow-hidden border border-primary/20 shrink-0">
+              <img src={portrait} alt="Roxanne" className="w-full h-full object-cover" />
+            </div>
+            <a
+              href="#"
+              onClick={(e) => handleLinkClick(e, "#")}
+              className="font-heading text-2xl font-extrabold tracking-tight text-primary transition-transform duration-300 hover:scale-105 active:scale-95"
+            >
+              R<span className="text-accent font-black">.</span>
+            </a>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">

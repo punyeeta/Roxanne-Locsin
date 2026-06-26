@@ -135,7 +135,7 @@ function Contact() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="Alex Mercer"
+                    placeholder="Maomao"
                     className="w-full bg-background border border-border/80 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent font-sans text-foreground"
                   />
                 </div>
@@ -150,7 +150,7 @@ function Contact() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="alex@example.com"
+                    placeholder="maomao@example.com"
                     className="w-full bg-background border border-border/80 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent font-sans text-foreground"
                   />
                 </div>

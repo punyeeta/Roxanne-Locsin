@@ -52,7 +52,7 @@ function Journey() {
     const nextState = !isExpanded
     setIsExpanded(nextState)
     if (!nextState) {
-      const journeySection = document.getElementById("journey")
+      const journeySection = document.getElementById("timeline")
       if (journeySection) {
         journeySection.scrollIntoView({ behavior: "smooth" })
       }
@@ -60,7 +60,7 @@ function Journey() {
   }
 
   return (
-    <section id="journey" className="py-12 px-6 md:px-12 lg:px-24 bg-card/20 relative border-t border-border/10 scroll-mt-20">
+    <section id="timeline" className="py-12 px-6 md:px-12 lg:px-24 bg-card/20 relative border-t border-border/10 scroll-mt-20">
       <div className="max-w-[85rem] mx-auto space-y-12">
         <div className="space-y-2 text-left">
           <span className="text-sm uppercase tracking-[0.2em] font-bold text-accent">Timeline</span>

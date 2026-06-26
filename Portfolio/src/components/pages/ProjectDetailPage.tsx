@@ -15,7 +15,7 @@ function splitProjectName(name: string) {
       subtitle: segments.slice(1).join(" — ").trim()
     }
   }
-  
+
   const parenIndex = name.indexOf(" (")
   if (parenIndex !== -1) {
     const title = name.substring(0, parenIndex).trim()
@@ -35,29 +35,29 @@ function splitProjectName(name: string) {
     }
     return { title, subtitle }
   }
-  
+
   return { title: name, subtitle: "" }
 }
 
 function parseLiveSites(liveSiteString: string) {
   if (!liveSiteString) return []
-  
+
   if (!liveSiteString.includes("\n") && !liveSiteString.includes("\r")) {
     const cleanUrl = liveSiteString.replace(/^(Live Site:?|Live Prototype:?)\s*/i, "").trim()
     return [{ label: "Live Demo", url: cleanUrl }]
   }
-  
+
   const lines = liveSiteString.split(/\r?\n/)
   const results: { label: string; url: string }[] = []
-  
+
   for (const line of lines) {
     const trimmed = line.trim()
     if (!trimmed) continue
-    
+
     if (!trimmed.toLowerCase().includes("http://") && !trimmed.toLowerCase().includes("https://")) {
       continue
     }
-    
+
     const match = trimmed.match(/^([^:]+):\s*(https?:\/\/\S+)/i)
     if (match) {
       results.push({
@@ -76,12 +76,12 @@ function parseLiveSites(liveSiteString: string) {
       }
     }
   }
-  
+
   if (results.length === 0) {
     const cleanUrl = liveSiteString.replace(/^(Live Site:?|Live Prototype:?)\s*/i, "").trim()
     return [{ label: "Live Demo", url: cleanUrl }]
   }
-  
+
   return results
 }
 
@@ -122,18 +122,18 @@ function ProjectDetailPage({ projectId }: ProjectDetailPageProps) {
     if (!project || !project.detailedDescription) {
       return { overview: [], contributions: [], keyFeatures: [] }
     }
-    
+
     const lines = project.detailedDescription.split(/\r?\n/)
     const overview: string[] = []
     const contributions: string[] = []
     const keyFeatures: string[] = []
-    
+
     let currentSection: "overview" | "contributions" | "features" = "overview"
-    
+
     for (const line of lines) {
       const trimmed = line.trim()
       if (!trimmed) continue
-      
+
       if (trimmed.toLowerCase().includes("my contributions")) {
         currentSection = "contributions"
         continue
@@ -141,9 +141,9 @@ function ProjectDetailPage({ projectId }: ProjectDetailPageProps) {
         currentSection = "features"
         continue
       }
-      
+
       const cleanLine = trimmed.replace(/^[\s•\-\*]+/, "")
-      
+
       if (currentSection === "overview") {
         overview.push(trimmed)
       } else if (currentSection === "contributions") {
@@ -152,7 +152,7 @@ function ProjectDetailPage({ projectId }: ProjectDetailPageProps) {
         keyFeatures.push(cleanLine)
       }
     }
-    
+
     return { overview, contributions, keyFeatures }
   }, [project])
 
@@ -195,7 +195,7 @@ function ProjectDetailPage({ projectId }: ProjectDetailPageProps) {
   return (
     <div className="min-h-screen py-12 px-6 md:px-12 lg:px-24 bg-background fade-up">
       <div className="max-w-[85rem] mx-auto space-y-8">
-        
+
         {/* Navigation Breadcrumb */}
         <div className="flex items-center gap-4 text-left">
           <a
@@ -206,17 +206,17 @@ function ProjectDetailPage({ projectId }: ProjectDetailPageProps) {
             Back to Archive
           </a>
           <span className="text-border">/</span>
-          <span className="text-sm font-medium text-[#D4A017] uppercase tracking-wider">
+          <span className="text-sm font-medium text-accent uppercase tracking-wider">
             {project.category} Case Study
           </span>
         </div>
 
         {/* Layout Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-          
+
           {/* Left Column: Case Study Text & Deliverables (60%) */}
           <div className="lg:col-span-7 space-y-10 text-left">
-            
+
             {/* Project Title Block */}
             <div className="space-y-3">
               <span className="inline-block px-3 py-1 bg-muted border border-border text-foreground/80 text-[10px] font-bold tracking-widest uppercase rounded-full">
@@ -226,7 +226,7 @@ function ProjectDetailPage({ projectId }: ProjectDetailPageProps) {
                 {title}
               </h1>
               {subtitle && (
-                <p className="text-sm font-semibold tracking-wider text-[#D4A017] uppercase">
+                <p className="text-sm font-semibold tracking-wider text-accent uppercase">
                   {subtitle}
                 </p>
               )}
@@ -289,7 +289,7 @@ function ProjectDetailPage({ projectId }: ProjectDetailPageProps) {
                     <div className="bg-card border border-border/60 rounded-2xl p-6 space-y-4">
                       {parsedDetails.contributions.map((contribution, index) => (
                         <div key={index} className="flex gap-3.5 items-start">
-                          <div className="mt-0.5 text-[#D4A017] shrink-0">
+                          <div className="mt-0.5 text-accent shrink-0">
                             <ShieldCheck className="size-4.5" />
                           </div>
                           <p className="font-sans text-sm text-foreground/90 leading-relaxed">
@@ -325,9 +325,9 @@ function ProjectDetailPage({ projectId }: ProjectDetailPageProps) {
             )}
           </div>
 
-          {/* Right Column: Visual Preview & Metadata Dashboard (40%) */}
+          {/* Right Column */}
           <div className="lg:col-span-5 space-y-6">
-            
+
             {/* Visual Canvas Representation Container */}
             <div className="relative group overflow-hidden rounded-2xl border border-border/60 shadow-md">
               <div className="p-4 bg-muted/20 border-b border-border/10 flex justify-between items-center text-xs font-mono text-muted-foreground">

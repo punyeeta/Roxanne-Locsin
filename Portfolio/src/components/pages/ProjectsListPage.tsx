@@ -97,7 +97,15 @@ function parseLiveSites(liveSiteString: string) {
 
 function ProjectsListPage() {
   const [searchQuery, setSearchQuery] = useState("")
-  const [selectedCategory, setSelectedCategory] = useState<"All" | "Academic" | "Professional" | "Personal">("All")
+  const [activeFilters, setActiveFilters] = useState<("Academic" | "Professional" | "Personal")[]>([])
+
+  const toggleFilter = (category: "Academic" | "Professional" | "Personal") => {
+    setActiveFilters((prev) =>
+      prev.includes(category)
+        ? prev.filter((c) => c !== category)
+        : [...prev, category]
+    )
+  }
   const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>(() => {
     try {
       const saved = sessionStorage.getItem("portfolio-expanded-categories")
@@ -124,8 +132,8 @@ function ProjectsListPage() {
     const sorted = [...(projectsData as ProjectData[])].sort((a, b) => parseInt(b.year) - parseInt(a.year))
     
     return sorted.filter((project) => {
-      // Category filter
-      if (selectedCategory !== "All" && project.category !== selectedCategory) {
+      // Category filter (multi-select)
+      if (activeFilters.length > 0 && !activeFilters.includes(project.category as any)) {
         return false
       }
 
@@ -141,7 +149,7 @@ function ProjectsListPage() {
 
       return true
     })
-  }, [searchQuery, selectedCategory])
+  }, [searchQuery, activeFilters])
 
   // Group filtered projects by category
   const groupedProjects = useMemo(() => {
@@ -195,19 +203,23 @@ function ProjectsListPage() {
             </div>
 
             {/* Filter Pills */}
-            <div className="flex flex-wrap gap-1.5 bg-muted/30 p-1.5 rounded-full border border-border/40">
-              {(["All", "Academic", "Professional", "Personal"] as const).map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`px-4 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full transition-all cursor-pointer ${selectedCategory === cat
-                    ? "bg-primary text-primary-foreground shadow-sm"
-                    : "text-muted-foreground hover:text-foreground"
+            <div className="flex items-center gap-2.5 bg-muted/30 py-1.5 px-3.5 rounded-full border border-border/40 shrink-0 overflow-x-auto scrollbar-none self-center sm:self-auto max-w-full">
+              {(["Academic", "Professional", "Personal"] as const).map((cat) => {
+                const isActive = activeFilters.includes(cat)
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => toggleFilter(cat)}
+                    className={`px-4 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full transition-all cursor-pointer shrink-0 ${
+                      isActive
+                        ? "bg-primary text-primary-foreground shadow-sm"
+                        : "text-muted-foreground hover:text-foreground"
                     }`}
-                >
-                  {cat}
-                </button>
-              ))}
+                  >
+                    {cat}
+                  </button>
+                )
+              })}
             </div>
           </div>
         </div>
@@ -255,7 +267,7 @@ function ProjectsListPage() {
                           <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                             <div className="space-y-2">
                               <div className="flex items-center justify-between">
-                                <span className="text-[10px] font-bold tracking-widest text-[#D4A017] uppercase">
+                                <span className="text-[10px] font-bold tracking-widest text-accent uppercase">
                                   {project.year}
                                 </span>
                                 <span className="text-[9px] font-medium px-2 py-0.5 bg-muted border border-border/50 text-foreground/80 rounded-md">
@@ -361,12 +373,12 @@ function ProjectsListPage() {
             <div className="text-accent text-3xl font-extrabold">∅</div>
             <h3 className="font-heading text-lg font-bold text-foreground">No matches found</h3>
             <p className="text-sm text-muted-foreground max-w-md mx-auto px-6 font-sans">
-              We couldn't find any projects matching "{searchQuery}" under "{selectedCategory}" category.
+              We couldn't find any projects matching "{searchQuery}" under your selected filters.
             </p>
             <button
               onClick={() => {
                 setSearchQuery("")
-                setSelectedCategory("All")
+                setActiveFilters([])
               }}
               className="px-5 py-2 text-xs font-bold uppercase tracking-wider bg-primary text-primary-foreground rounded-full hover:bg-primary/95 transition-all cursor-pointer"
             >

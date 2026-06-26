@@ -185,14 +185,14 @@ function Projects() {
                   className={`lg:col-span-6 space-y-6 text-left ${isEven ? "lg:order-2" : "lg:order-1"}`}
                 >
                   <div className="space-y-2">
-                    <span className="text-[10px] font-bold tracking-widest text-[#D4A017] uppercase block">
+                    <span className="text-[10px] font-bold tracking-widest text-accent uppercase block">
                       {project.category} &bull; {project.year}
                     </span>
                     <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
                       {title}
                     </h3>
                     {subtitle && (
-                      <span className="text-xs font-semibold tracking-wider text-[#D4A017] uppercase block">
+                      <span className="text-xs font-semibold tracking-wider text-accent uppercase block">
                         {subtitle}
                       </span>
                     )}
@@ -291,33 +291,33 @@ function getVisualComponent(id: string) {
 
   if (id.includes("usad")) {
     return (
-      <div className="relative w-full h-full min-h-[200px] md:min-h-[230px] bg-gradient-to-br from-[#121215] to-[#0A0A0D] border border-border/10 rounded-2xl overflow-hidden p-5 shadow-inner">
+      <div className="relative w-full h-full min-h-[200px] md:min-h-[230px] bg-gradient-to-br from-[#121215] to-[#0A0A0D] border border-white/5 rounded-2xl overflow-hidden p-5 shadow-inner text-zinc-300">
         <div className="absolute inset-0 bg-[radial-gradient(#ffffff02_1px,transparent_1px)] bg-[size:20px_20px]" />
 
         <div className="relative z-10 h-full flex flex-col justify-between space-y-4">
-          <div className="flex items-center justify-between border-b border-border/10 pb-2">
-            <span className="text-[10px] uppercase font-bold tracking-widest text-[#A1A1AA]">Traffic Monitor</span>
-            <span className="flex items-center gap-1.5 text-[9px] text-[#A1A1AA]">
+          <div className="flex items-center justify-between border-b border-white/10 pb-2">
+            <span className="text-[10px] uppercase font-bold tracking-widest text-zinc-400">Traffic Monitor</span>
+            <span className="flex items-center gap-1.5 text-[9px] text-zinc-400">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> Intersection-USAD-04
             </span>
           </div>
 
           <div className="grid grid-cols-3 gap-2 text-left">
-            <div className="bg-muted/20 border border-border/5 p-2 rounded">
-              <span className="text-[8px] text-muted-foreground block">FPS</span>
-              <span className="text-xs font-bold text-foreground">30.2</span>
+            <div className="bg-white/5 border border-white/5 p-2 rounded">
+              <span className="text-[8px] text-zinc-500 block uppercase font-bold">FPS</span>
+              <span className="text-xs font-bold text-zinc-100">30.2</span>
             </div>
-            <div className="bg-muted/20 border border-border/5 p-2 rounded">
-              <span className="text-[8px] text-muted-foreground block">Accidents</span>
-              <span className="text-xs font-bold text-[#D4A017]">0</span>
+            <div className="bg-white/5 border border-white/5 p-2 rounded">
+              <span className="text-[8px] text-zinc-500 block uppercase font-bold">Accidents</span>
+              <span className="text-xs font-bold text-accent">0</span>
             </div>
-            <div className="bg-muted/20 border border-border/5 p-2 rounded">
-              <span className="text-[8px] text-muted-foreground block">Vehicles/m</span>
+            <div className="bg-white/5 border border-white/5 p-2 rounded">
+              <span className="text-[8px] text-zinc-500 block uppercase font-bold">Vehicles/m</span>
               <span className="text-xs font-bold text-[#B42318]">42</span>
             </div>
           </div>
 
-          <div className="h-16 w-full bg-muted/10 border border-border/5 rounded p-2 flex items-end gap-1">
+          <div className="h-16 w-full bg-white/5 border border-white/5 rounded p-2 flex items-end gap-1">
             {[30, 45, 25, 60, 80, 50, 40, 70, 90, 60, 45, 75, 95, 60].map((h, i) => (
               <div
                 key={i}
@@ -333,14 +333,14 @@ function getVisualComponent(id: string) {
 
   if (id.includes("working")) {
     return (
-      <div className="relative w-full h-full min-h-[200px] md:min-h-[230px] bg-gradient-to-br from-[#12161E] to-[#0A0D14] border border-[#1E293B]/40 rounded-2xl overflow-hidden flex items-center justify-center p-6 shadow-inner">
+      <div className="relative w-full h-full min-h-[200px] md:min-h-[230px] bg-gradient-to-br from-[#12161E] to-[#0A0D14] border border-white/5 rounded-2xl overflow-hidden flex items-center justify-center p-6 shadow-inner text-zinc-400">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:16px_16px]" />
 
-        <div className="relative z-10 w-full h-full flex flex-col justify-between font-mono text-[9px] text-[#475569] select-none text-left">
-          <div className="flex justify-between w-full border-b border-border/10 pb-1">
+        <div className="relative z-10 w-full h-full flex flex-col justify-between font-mono text-[9px] text-[#8892B0] select-none text-left">
+          <div className="flex justify-between w-full border-b border-white/10 pb-1">
             <span>[OpenStreetMap]</span>
             <span>Food Map GPS</span>
-            <span>Map Unlock: 35%</span>
+            <span className="text-accent font-bold">Map Unlock: 35%</span>
           </div>
 
           <svg className="w-full h-24 text-accent" viewBox="0 0 200 80" fill="none">
@@ -366,7 +366,7 @@ function getVisualComponent(id: string) {
             <circle cx="120" cy="70" r="3.5" fill="#475569" />
           </svg>
 
-          <div className="flex justify-between w-full border-t border-border/10 pt-1">
+          <div className="flex justify-between w-full border-t border-white/10 pt-1 text-zinc-500">
             <span>Active Pins: 14</span>
             <span>Check-in Verification</span>
             <span>MySQL/Leaflet</span>
@@ -378,26 +378,26 @@ function getVisualComponent(id: string) {
 
   if (id.includes("gabay")) {
     return (
-      <div className="relative w-full h-full min-h-[200px] md:min-h-[230px] bg-gradient-to-br from-[#0F172A] to-[#020617] border border-blue-950/20 rounded-2xl overflow-hidden flex flex-col justify-between p-5 shadow-inner text-left font-mono">
-        <div className="flex justify-between items-center border-b border-border/10 pb-2 text-[9px] text-muted-foreground">
+      <div className="relative w-full h-full min-h-[200px] md:min-h-[230px] bg-gradient-to-br from-[#0F172A] to-[#020617] border border-white/5 rounded-2xl overflow-hidden flex flex-col justify-between p-5 shadow-inner text-left font-mono text-zinc-300">
+        <div className="flex justify-between items-center border-b border-white/10 pb-2 text-[9px] text-zinc-500">
           <span>CIVIC APPLICATION</span>
-          <span className="text-[#D4A017] font-bold">Quiz Active</span>
+          <span className="text-accent font-bold">Quiz Active</span>
         </div>
 
         <div className="space-y-2 py-3">
-          <p className="text-[10px] text-foreground font-bold font-sans">Q1: Which issue is most important to you?</p>
+          <p className="text-[10px] text-zinc-100 font-bold font-sans">Q1: Which issue is most important to you?</p>
           <div className="space-y-1.5">
-            <div className="bg-primary/20 border border-primary/40 px-3 py-1.5 rounded text-[9px] text-[#F8F4EE] flex items-center justify-between">
+            <div className="bg-primary/20 border border-primary/40 px-3 py-1.5 rounded text-[9px] text-zinc-100 flex items-center justify-between">
               <span>A. Public Healthcare Systems</span>
               <span className="text-[8px] bg-primary/40 px-1 rounded">Selected</span>
             </div>
-            <div className="bg-muted/30 border border-border/10 px-3 py-1.5 rounded text-[9px] text-muted-foreground">
+            <div className="bg-white/5 border border-white/10 px-3 py-1.5 rounded text-[9px] text-zinc-400">
               <span>B. Infrastructure & Road Dev</span>
             </div>
           </div>
         </div>
 
-        <div className="flex justify-between items-center border-t border-border/10 pt-2 text-[8px] text-muted-foreground">
+        <div className="flex justify-between items-center border-t border-white/10 pt-2 text-[8px] text-zinc-500">
           <span>Progress: 1/5</span>
           <span>Java Swing / UI</span>
         </div>
@@ -405,12 +405,12 @@ function getVisualComponent(id: string) {
     )
   }
 
-  if (id.includes("f-prime")) {
+  if (id.includes("f-prime") || id.includes("fprime")) {
     return (
-      <div className="relative w-full h-full min-h-[200px] md:min-h-[230px] bg-gradient-to-br from-[#1E1B4B] to-[#0F0E2C] border border-[#312E81]/30 rounded-2xl overflow-hidden flex items-center justify-center p-6 shadow-inner">
+      <div className="relative w-full h-full min-h-[200px] md:min-h-[230px] bg-gradient-to-br from-[#1E1B4B] to-[#0F0E2C] border border-white/5 rounded-2xl overflow-hidden flex items-center justify-center p-6 shadow-inner text-zinc-300">
         <div className="absolute inset-0 bg-[radial-gradient(#ffffff03_1px,transparent_1px)] bg-[size:12px_12px]" />
-        <div className="relative z-10 w-full h-full flex flex-col justify-between font-mono text-[9px] text-muted-foreground select-none text-left">
-          <div className="flex justify-between w-full border-b border-border/10 pb-1">
+        <div className="relative z-10 w-full h-full flex flex-col justify-between font-mono text-[9px] text-zinc-400 select-none text-left">
+          <div className="flex justify-between w-full border-b border-white/10 pb-1">
             <span>[Calculator View]</span>
             <span>Quad Integration</span>
           </div>
@@ -423,7 +423,7 @@ function getVisualComponent(id: string) {
             <line x1="100" y1="40" x2="100" y2="40" stroke="#D4A017" strokeWidth="1" strokeDasharray="2 2" />
           </svg>
 
-          <div className="flex justify-between w-full border-t border-border/10 pt-1">
+          <div className="flex justify-between w-full border-t border-white/10 pt-1 text-zinc-500">
             <span>Limit a: 2.0</span>
             <span>Limit b: 8.5</span>
             <span>SciPy / Tkinter</span>
@@ -435,7 +435,7 @@ function getVisualComponent(id: string) {
 
   if (id.includes("synced")) {
     return (
-      <div className="relative w-full h-full min-h-[200px] md:min-h-[230px] bg-gradient-to-br from-[#120F24] to-[#0A0714] border border-purple-950/20 rounded-2xl overflow-hidden flex items-center justify-center p-6 shadow-inner">
+      <div className="relative w-full h-full min-h-[200px] md:min-h-[230px] bg-gradient-to-br from-[#120F24] to-[#0A0714] border border-white/5 rounded-2xl overflow-hidden flex items-center justify-center p-6 shadow-inner text-zinc-300">
         <div className="absolute inset-0 bg-[radial-gradient(#B4231805_1px,transparent_1px)] bg-[size:16px_16px]" />
 
         <svg className="w-full h-full text-accent/30" viewBox="0 0 200 120">
@@ -453,32 +453,32 @@ function getVisualComponent(id: string) {
           <path d="M 60 60 Q 100 20 140 60" stroke="#B42318" strokeWidth="1" fill="none" className="animate-pulse" />
           <path d="M 60 60 Q 100 100 140 60" stroke="#D4A017" strokeWidth="1" fill="none" className="animate-pulse" />
         </svg>
-        <span className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[8px] font-mono text-muted-foreground whitespace-nowrap">
+        <span className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[8px] font-mono text-zinc-500 whitespace-nowrap">
           WebRTC Voice Signaling Active
         </span>
       </div>
     )
   }
 
-  if (id.includes("hi-lite")) {
+  if (id.includes("hi-lite") || id.includes("hilite")) {
     return (
-      <div className="relative w-full h-full min-h-[200px] md:min-h-[230px] bg-gradient-to-br from-[#061F1A] to-[#010D0B] border border-teal-950/20 rounded-2xl overflow-hidden flex flex-col justify-between p-5 shadow-inner text-left font-mono">
-        <div className="flex justify-between items-center border-b border-border/10 pb-2 text-[9px] text-muted-foreground">
+      <div className="relative w-full h-full min-h-[200px] md:min-h-[230px] bg-gradient-to-br from-[#061F1A] to-[#010D0B] border border-white/5 rounded-2xl overflow-hidden flex flex-col justify-between p-5 shadow-inner text-left font-mono text-zinc-300">
+        <div className="flex justify-between items-center border-b border-white/10 pb-2 text-[9px] text-zinc-500">
           <span>PORTFOLIO & BOOKINGS</span>
           <span className="text-teal-400 font-bold">Vercel Live</span>
         </div>
         <div className="py-2.5 space-y-1">
-          <p className="text-[10px] text-foreground font-bold font-sans">Hi-Lite Booking Calendar</p>
-          <div className="grid grid-cols-7 gap-1 text-[8px] text-center border-t border-border/5 pt-1.5">
-            {["M", "T", "W", "T", "F", "S", "S"].map(d => <span key={d} className="text-muted-foreground">{d}</span>)}
+          <p className="text-[10px] text-zinc-100 font-bold font-sans">Hi-Lite Booking Calendar</p>
+          <div className="grid grid-cols-7 gap-1 text-[8px] text-center border-t border-white/5 pt-1.5">
+            {["M", "T", "W", "T", "F", "S", "S"].map(d => <span key={d} className="text-zinc-500">{d}</span>)}
             {[23, 24, 25, 26, 27, 28, 29].map(n => (
-              <span key={n} className={n === 25 ? "bg-primary text-primary-foreground rounded-sm font-bold" : "text-foreground"}>
+              <span key={n} className={n === 25 ? "bg-primary text-primary-foreground rounded-sm font-bold" : "text-zinc-300"}>
                 {n}
               </span>
             ))}
           </div>
         </div>
-        <div className="flex justify-between items-center border-t border-border/10 pt-2 text-[8px] text-muted-foreground">
+        <div className="flex justify-between items-center border-t border-white/10 pt-2 text-[8px] text-zinc-500">
           <span>Integrates OpenAI API</span>
           <span>Supabase / React</span>
         </div>
@@ -488,19 +488,19 @@ function getVisualComponent(id: string) {
 
   if (id.includes("hapagtech") || id.includes("kangina")) {
     return (
-      <div className="relative w-full h-full min-h-[200px] md:min-h-[230px] bg-gradient-to-br from-[#1F1206] to-[#0D0701] border border-amber-950/20 rounded-2xl overflow-hidden flex flex-col justify-between p-5 shadow-inner text-left font-mono">
-        <div className="flex justify-between items-center border-b border-border/10 pb-2 text-[9px] text-muted-foreground">
+      <div className="relative w-full h-full min-h-[200px] md:min-h-[230px] bg-gradient-to-br from-[#1F1206] to-[#0D0701] border border-white/5 rounded-2xl overflow-hidden flex flex-col justify-between p-5 shadow-inner text-left font-mono text-zinc-300">
+        <div className="flex justify-between items-center border-b border-white/10 pb-2 text-[9px] text-zinc-500">
           <span>RESTAURANT ORDERING</span>
-          <span className="text-[#D4A017] font-bold">Menu View</span>
+          <span className="text-accent font-bold">Menu View</span>
         </div>
         <div className="py-3 space-y-1 font-sans">
-          <p className="text-[10px] text-foreground font-bold">HapagTech Plate Selection</p>
-          <div className="flex items-center justify-between bg-muted/30 border border-border/15 p-2 rounded text-[9px]">
+          <p className="text-[10px] text-zinc-100 font-bold">HapagTech Plate Selection</p>
+          <div className="flex items-center justify-between bg-white/5 border border-white/10 p-2 rounded text-[9px]">
             <span>1x Grilled Tuna Salad</span>
-            <span className="font-bold text-[#D4A017]">$12.50</span>
+            <span className="font-bold text-accent">$12.50</span>
           </div>
         </div>
-        <div className="flex justify-between items-center border-t border-border/10 pt-2 text-[8px] text-muted-foreground">
+        <div className="flex justify-between items-center border-t border-white/10 pt-2 text-[8px] text-zinc-500">
           <span>Active Cart System</span>
           <span>Django / Postgres</span>
         </div>
@@ -510,17 +510,17 @@ function getVisualComponent(id: string) {
 
   // Fallback default
   return (
-    <div className="relative w-full h-full min-h-[200px] md:min-h-[230px] bg-gradient-to-br from-[#12161E] to-[#0A0D14] border border-[#1E293B]/40 rounded-2xl overflow-hidden p-5 shadow-inner text-left font-mono">
+    <div className="relative w-full h-full min-h-[200px] md:min-h-[230px] bg-gradient-to-br from-[#12161E] to-[#0A0D14] border border-white/5 rounded-2xl overflow-hidden p-5 shadow-inner text-left font-mono text-zinc-300">
       <div className="absolute inset-0 bg-[radial-gradient(#ffffff02_1px,transparent_1px)] bg-[size:20px_20px]" />
-      <div className="relative z-10 h-full flex flex-col justify-between text-[9px] text-[#475569] select-none">
-        <div className="flex items-center justify-between border-b border-border/10 pb-2">
+      <div className="relative z-10 h-full flex flex-col justify-between text-[9px] text-zinc-400 select-none">
+        <div className="flex items-center justify-between border-b border-white/10 pb-2">
           <span>{id.toUpperCase()}</span>
           <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
         </div>
-        <div className="h-20 bg-muted/20 border border-border/5 rounded p-2.5 flex items-center justify-center">
-          <span className="text-center font-sans text-xs text-muted-foreground font-semibold">Web Interface Showcase</span>
+        <div className="h-20 bg-white/5 border border-white/5 rounded p-2.5 flex items-center justify-center">
+          <span className="text-center font-sans text-xs text-zinc-400 font-semibold">Web Interface Showcase</span>
         </div>
-        <div className="flex justify-between items-center text-[8px]">
+        <div className="flex justify-between items-center text-[8px] text-zinc-500">
           <span>Full Stack Integration</span>
           <span>Vite &bull; TypeScript</span>
         </div>

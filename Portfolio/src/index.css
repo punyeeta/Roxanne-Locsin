@@ -55,7 +55,7 @@
   --secondary-foreground: #18181B;
   --muted: #F3EFE9;
   --muted-foreground: #71717A;
-  --accent: #D4A017;
+  --accent: #9A6F00;
   --accent-foreground: #18181B;
   --destructive: #B42318;
   --border: #EBE6DF;
@@ -150,5 +150,14 @@
   }
   .cursor-glow:hover::after {
     opacity: 1;
+  }
+
+  /* Hide scrollbar utility */
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
   }
 }
