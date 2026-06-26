@@ -1,0 +1,202 @@
+[
+  {
+    "id": "academic-gabay",
+    "name": "Gabay — Voter Awareness Application",
+    "year": "2025",
+    "category": "Academic",
+    "shortDescription": "Gabáy is an academic desktop application designed to promote informed voting by providing an interactive platform for exploring political candidates, comparing issue-based positions, and discovering candidate alignment through quiz-driven recommendations. The project focused on making civic information more accessible through a modern and user-friendly experience.",
+    "role": "Project Developer",
+    "outcome": "Developed a functional desktop platform that transformed political information into an accessible and engaging experience while strengthening skills in desktop application development, UI/UX design, and collaborative software development.",
+    "techStack": [
+      "Java",
+      "Java Swing",
+      "Figma"
+    ],
+    "detailedDescription": "Gabáy is a desktop-based voter awareness platform developed to help users explore political candidates, compare issue-based positions, view candidate information, and discover aligned candidates through an interactive quiz. The system emphasizes accessibility, usability, and engagement through a modern interface and intuitive user experience.\r\n\r\nMy Contributions:\r\nContributed to application development and feature implementation\r\nDeveloped and refined user-facing interactions\r\nImproved usability and overall user experience\r\nSupported interface design and workflow optimization\r\nParticipated in testing and feature enhancement\r\n\r\nKey Features:\r\nCandidate search and filtering\r\nCandidate comparison system\r\nQuiz-based recommendation feature\r\nAdministrative content management\r\nInteractive and responsive interface",
+    "futureWorks": "Expand into a full-stack web and mobile platform\r\nIntegrate real-time election and candidate data\r\nAdd personalized recommendations and user accounts\r\nImprove accessibility and scalability",
+    "github": "https://github.com/markvncent/Gabay.git",
+    "liveSite": "",
+    "team": "Roxanne Locsin, Mark Vincent Limpahan, Rhenel Jhon Sajol"
+  },
+  {
+    "id": "academic-ehco-enhanced-huffman-coding-with-run-length-and-dct-based-audio-compression",
+    "name": "EHCo (Enhanced Huffman Coding with Run-Length and DCT-Based Audio Compression)",
+    "year": "2025",
+    "category": "Academic",
+    "shortDescription": "EHCo is an academic research project focused on improving audio compression efficiency while maintaining high audio quality. The framework combines Discrete Cosine Transform (DCT), Run-Length Encoding (RLE), and Adaptive Huffman Coding (AHC) to achieve higher compression ratios with minimal distortion, making it suitable for efficient audio processing and real-time applications.",
+    "role": "Researcher & Developer",
+    "outcome": "Designed and evaluated a hybrid audio compression framework that achieved up to 8.45:1 compression ratio while maintaining PSNR > 40 dB and THD < 0.01%, demonstrating improved compression performance with preserved audio fidelity.",
+    "techStack": [
+      "Python",
+      "Signal Processing",
+      "DCT",
+      "RLE",
+      "Adaptive Huffman Coding"
+    ],
+    "detailedDescription": "EHCo is an academic research project developed to improve digital audio compression by balancing storage efficiency and audio quality. The framework integrates Discrete Cosine Transform (DCT) for signal optimization, Run-Length Encoding (RLE) for redundancy reduction, and Adaptive Huffman Coding (AHC) for efficient encoding.\r\n\r\nThe system was tested across audio samples ranging from 4 kHz to 48 kHz and demonstrated improved compression performance while maintaining high audio fidelity, making it applicable to streaming, telecommunications, and resource-efficient environments.\r\n\r\nMy Contributions:\r\nConducted research and analysis for compression methodologies\r\nParticipated in designing and evaluating the hybrid compression framework\r\nPerformed testing and interpretation of compression performance metrics\r\nContributed to documentation and research development\r\nSupported optimization and validation of experimental results\r\nKey Features:\r\nHybrid DCT + RLE + Adaptive Huffman compression pipeline\r\nImproved compression efficiency with reduced distortion\r\nPerformance evaluation using PSNR and THD metrics\r\nSupport for multiple audio sampling rates",
+    "futureWorks": "Support additional audio formats (MP3, FLAC, AAC)\r\nExtend compatibility for real-time streaming environments\r\nImprove adaptive encoding performance and optimization\r\nImplement dynamic context-aware preprocessing\r\nExplore deployment for embedded and real-time systems",
+    "github": "https://github.com/punyeeta/ALGO2-RESEARCH.git",
+    "liveSite": "",
+    "team": "Roxanne Locsin, Mark Vincent Limpahan, Rhenel Jhon Sajol"
+  },
+  {
+    "id": "academic-f-prime",
+    "name": "f'prime — Calculus-Powered Graphing App",
+    "year": "2025",
+    "category": "Academic",
+    "shortDescription": "f'prime is an academic desktop application developed to simplify calculus computation through an intuitive graphical interface. The application enables users to evaluate mathematical functions, define integration intervals, and compute numerical approximations using scientific computing methods.",
+    "role": "Project Developer",
+    "outcome": "Developed a functional mathematical computation tool that improved accessibility to numerical integration and strengthened experience in GUI development, scientific computing, and application design.",
+    "techStack": [
+      "Python",
+      "Tkinter",
+      "SciPy",
+      "NumPy",
+      "SymPy"
+    ],
+    "detailedDescription": "f'prime is a desktop-based mathematical calculator and numerical integration application developed to support calculus computation through an interactive and user-friendly interface. Built using Python and Tkinter, the system allows users to input mathematical expressions, define integration bounds, and calculate numerical integrals using scientific computing libraries.\r\n\r\nThe project focused on combining computational mathematics with practical software development to create an accessible tool for mathematical exploration and analysis.\r\n\r\nMy Contributions:\r\nContributed to application development and feature implementation\r\nDeveloped and refined user-facing interactions\r\nSupported interface design and usability improvements\r\nParticipated in testing and validation of computational outputs\r\nAssisted in integrating mathematical computation workflows\r\n\r\nKey Features\r\nMathematical function input using Python syntax\r\nNumerical integration using scipy.integrate.quad()\r\nInteractive calculator interface\r\nCross-platform asset and application structure\r\nClean and modern desktop UI",
+    "futureWorks": "Expand into a full web and mobile platform\r\nAdd interactive graph and function visualization\r\nIntroduce advanced calculus operations and symbolic computation\r\nImplement equation-solving tools and saved calculations\r\nAdd educational and collaborative learning features",
+    "github": "https://github.com/punyeeta/fprime.git",
+    "liveSite": "",
+    "team": "Roxanne Locsin, Heart Chiong, Mark Vincent Limpahan, Rhenel Jhon Sajol,\nCharles Sorongon"
+  },
+  {
+    "id": "academic-hi-lite-studio",
+    "name": "Hi-Lite Studio — Studio Portfolio & Booking Management System",
+    "year": "2025",
+    "category": "Academic",
+    "shortDescription": "Hi-Lite Studio is a full-stack studio management web application developed to streamline portfolio presentation, client bookings, and administrative operations through a secure and responsive platform. The system provides an efficient experience for both clients and administrators while supporting business management and client engagement.",
+    "role": "Frontend Developer",
+    "outcome": "Designed and developed responsive user interfaces that improved usability, streamlined booking workflows, and enhanced the overall client experience across the platform.",
+    "techStack": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "TailwindCSS",
+      "shadcn/ui",
+      "Supabase",
+      "Vercel",
+      "OpenAI API"
+    ],
+    "detailedDescription": "Hi-Lite Studio is a web-based studio management platform developed to support portfolio showcasing, online booking management, and administrative operations in a centralized system. The platform enables clients to browse creative works, submit booking requests, and receive assistance through an integrated chatbot, while administrators manage content and studio activities through a secure dashboard.\r\n\r\nThe project focused on delivering a responsive, scalable, and user-centered experience while maintaining security and operational efficiency.\r\n\r\nMy Contributions\r\nDeveloped responsive frontend interfaces using React and TypeScript\r\nImplemented portfolio browsing and booking workflows\r\nBuilt reusable UI components using TailwindCSS and shadcn/ui\r\nImproved interface responsiveness and overall usability\r\nCollaborated with backend and design teams for seamless integration\r\nSupported testing and refinement of frontend features\r\n\r\nKey Features\r\nPortfolio showcase and content management\r\nOnline appointment and booking system\r\nResponsive and mobile-friendly interface\r\nSecure admin dashboard and authentication\r\nChatbot-assisted client interaction\r\nActivity monitoring and data management",
+    "futureWorks": "Expand into a full creative business management platform\r\nDevelop dedicated mobile applications\r\nAdd analytics and advanced booking automation\r\nImplement user accounts and project tracking\r\nEnhance AI-assisted customer support features",
+    "github": "",
+    "liveSite": "https://hi-lite-studio.vercel.app/",
+    "team": "Roxanne Locsin, Heart Chiong, Mark Vincent Limpahan, Gil John Rey Naldoza, Rhenel Jhon Sajol, Angel Janette Taglucop"
+  },
+  {
+    "id": "academic-iqueue",
+    "name": "iQueue — Predictive Queue Intelligence Platform",
+    "year": "2026",
+    "category": "Academic",
+    "shortDescription": "iQueue is a predictive queue management platform designed to help users make smarter visit decisions and support organizations through data-driven queue forecasting. The system combines intelligent prediction models, forecasting workflows, and interactive web experiences to estimate waiting times, congestion levels, and optimal visit schedules while improving operational visibility.",
+    "role": "Frontend Developer & Machine Learning Contributor",
+    "outcome": "Developed and integrated predictive queue forecasting features with a responsive web experience, contributing to both intelligent prediction workflows and user-centered platform design for proactive queue management.",
+    "techStack": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Python",
+      "Machine Learning",
+      "Data Processing",
+      "Supabase",
+      "Vercel",
+      "OpenAI API"
+    ],
+    "detailedDescription": "iQueue is a predictive queue intelligence platform developed to improve queue visibility and reduce uncertainty before visits. The platform combines forecasting models with an interactive web interface to estimate waiting times, identify congestion patterns, support visit planning, and collect user-driven inputs to improve prediction quality over time.\r\n\r\nThe project integrates data processing, predictive modeling, and web technologies into a unified experience that transforms queue management from reactive monitoring into proactive decision support.\r\n\r\nMy Contributions\r\nDeveloped frontend interfaces and responsive user experiences\r\nContributed to prediction workflow integration and system interactions\r\nParticipated in training, testing, and validating forecasting outputs\r\nSupported data preparation and model evaluation processes\r\nImplemented user-facing features for queue insights and interaction\r\nAssisted in connecting prediction outputs with application workflows\r\n\r\nKey Features\r\nQueue waiting-time forecasting\r\nCongestion and peak-hour prediction\r\nDynamic forecasting using user interactions\r\nResponsive web interface\r\nPredictive operational insights\r\nUser feedback and experience collection",
+    "futureWorks": "Expand support for additional institutions and service environments\r\nImprove prediction accuracy using larger real-world datasets\r\nIntroduce real-time forecasting and live monitoring\r\nDevelop mobile applications and notification systems\r\nAdd advanced analytics and operational dashboards",
+    "github": "",
+    "liveSite": "Live Site\nTechnopreneuship Version: https://i-queue-tech.vercel.app/\r\nMachine Learning Version: https://i-queue-seven.vercel.app/",
+    "team": "Roxanne Locsin, Rhenel Jhon Sajol, Mark Vincent Limpahan, Heart Chiong"
+  },
+  {
+    "id": "academic-synced",
+    "name": "SYNCED — Real-Time Anonymous Peer Matching Platform",
+    "year": "2026",
+    "category": "Academic",
+    "shortDescription": "SYNCED is a real-time peer matching platform designed to connect users through anonymous voice-based interaction using intelligent compatibility matching and low-latency communication. The system analyzes user attributes to generate relevant pairings and enables seamless peer-to-peer conversations through WebRTC and WebSocket technologies.",
+    "role": "System Developer",
+    "outcome": "Developed and integrated real-time communication workflows and interactive user experiences while applying distributed systems and concurrent communication concepts in a production-ready web environment.",
+    "techStack": [
+      "Next.js",
+      "FastAPI",
+      "WebSocket",
+      "WebRTC",
+      "Python",
+      "TypeScript",
+      "Vercel"
+    ],
+    "detailedDescription": "SYNCED is a web-based real-time communication platform developed to facilitate anonymous peer interaction through intelligent matching and direct voice communication. The system uses a server-managed matching queue to pair users and establishes peer-to-peer audio connections through WebRTC, enabling low-latency and privacy-focused communication.\r\n\r\nThe project emphasizes concurrency, distributed communication, and real-time interaction by combining WebSockets for signaling and WebRTC for direct media exchange.\r\n\r\nMy Contributions\r\nDeveloped frontend interfaces and real-time interaction workflows\r\nImplemented and refined connection state transitions and user experience\r\nContributed to real-time communication and matchmaking integration\r\nSupported peer connection handling and session interactions\r\nParticipated in testing, debugging, and concurrency validation\r\nImproved responsiveness and overall application flow\r\n\r\nKey Features\r\nReal-time peer-to-peer voice communication\r\nIntelligent user matching and waiting queue system\r\nAnonymous sessions with temporary identifiers\r\nSkip and re-queue functionality\r\nMute and unmute controls\r\nLive connection state indicators",
+    "futureWorks": "Improve and fix real-time concurrency handling for more stable simultaneous connections\r\nImplement distributed signaling with multiple server instances and load balancing\r\nReplace in-memory matching with Redis-based distributed queues\r\nAdd real-time analytics and monitoring dashboards\r\nImprove scalability, session management, and fault tolerance",
+    "github": "",
+    "liveSite": "Live Site\nhttps://sync-ed-neon.vercel.app/",
+    "team": "Roxanne Locsin, Mark Vincent Limpahan, Rhenel Jhon Sajol"
+  },
+  {
+    "id": "academic-hapagtech-formerly-kangina",
+    "name": "HapagTech (formerly Kangina) — Smart Restaurant Ordering System",
+    "year": "2025 & 2026",
+    "category": "Academic",
+    "shortDescription": "HapagTech is the improved and refined version of Kangina, a restaurant ordering web application developed to streamline food discovery, ordering, and checkout through a responsive digital experience. The platform enables users to browse menus, manage orders, and complete transactions through an intuitive and accessible interface.",
+    "role": "Frontend & System Developer",
+    "outcome": "Designed and enhanced user-facing experiences while improving ordering workflows, interface responsiveness, and overall usability through iterative redesign and feature refinement.",
+    "techStack": [
+      "React",
+      "TypeScript",
+      "Django",
+      "Python",
+      "PostgreSQL",
+      "Vercel"
+    ],
+    "detailedDescription": "HapagTech is an enhanced iteration of Kangina, developed as a restaurant ordering and management platform focused on improving usability, responsiveness, and the overall customer experience. The system enables users to browse categorized menu offerings, manage carts, place orders, complete checkout transactions, and access profile and order history features.\r\n\r\nThe project evolved from its original version into a more polished and scalable solution through interface improvements and feature refinement.\r\n\r\nMy Contributions\r\nDeveloped and improved frontend interfaces and user flows\r\nImplemented ordering and checkout interactions\r\nEnhanced responsiveness across multiple device sizes\r\nContributed to UI refinement and feature iteration\r\nSupported frontend-backend integration and testing\r\nImproved overall usability and customer experience\r\n\r\nKey Features\r\nUser authentication and account management\r\nCategorized food browsing and menu navigation\r\nCart and order processing workflows\r\nMultiple payment options (Cash, Card, QR)\r\nUser profile and order history\r\nResponsive web experience",
+    "futureWorks": "Fix and redesign damaged UI components for improved consistency and usability\r\nImprove visual design system and accessibility\r\nIntroduce real-time order tracking and notifications\r\nAdd restaurant analytics and admin management features\r\nExpand scalability and mobile optimization",
+    "github": "",
+    "liveSite": "Live Site\nKangina: https://kangina.vercel.app/\r\nHapagTech: https://hapag-tech.vercel.app/",
+    "team": "Roxanne Locsin, Rhenel Jhon Sajol, Mark Vincent Limpahan"
+  },
+  {
+    "id": "professional-usad-urban-smart-adaptive-detection",
+    "name": "USAD (Urban Smart Adaptive Detection)",
+    "year": "2026",
+    "category": "Professional",
+    "shortDescription": "USAD is an AI-powered traffic management system developed to improve road safety and optimize traffic flow through intelligent monitoring and adaptive control. The platform combines computer vision, vehicle tracking, incident detection, and automated traffic signal management to support faster decision-making and more efficient intersection operations.",
+    "role": "Project Contributor",
+    "outcome": "Contributed to the development and refinement of intelligent traffic management features while supporting system implementation, interface improvements, and collaborative solution delivery for real-world operational use.",
+    "techStack": [
+      "Python",
+      "OpenCV",
+      "OCR",
+      "Arduino",
+      "Computer Vision",
+      "Serial Communication",
+      "Data Analytics"
+    ],
+    "detailedDescription": "USAD (Urban Smart Adaptive Detection) is a smart traffic management system developed to monitor road conditions, detect incidents, and optimize intersection control using computer vision and adaptive traffic logic. The system processes real-time traffic data to identify vehicles, detect violations and accidents, adjust traffic signals dynamically, and generate operational analytics.\r\n\r\nThe platform combines intelligent monitoring with automated response mechanisms to improve traffic efficiency and support safer road environments.\r\n\r\nMy Contributions\r\nContributed to system development and feature implementation\r\nAssisted in improving system workflows and user interactions\r\nSupported testing, debugging, and validation processes\r\nParticipated in integration and refinement of traffic monitoring features\r\nCollaborated in delivering system functionality and operational improvements\r\n\r\nKey Features\r\nReal-time vehicle detection and tracking\r\nAccident detection and emergency notification simulation\r\nLicense plate recognition through OCR\r\nAdaptive traffic signal control\r\nTraffic violation detection (red-light, illegal turns, yellow-light abuse)\r\nEvent logging and analytics reporting\r\nArduino-powered traffic light integration",
+    "futureWorks": "Deploy the system into a production-ready environment\r\nTransform the platform into a full web and mobile application\r\nImprove scalability and monitoring accessibility\r\nIntroduce cloud-based analytics and reporting\r\nEnhance real-time traffic visualization and operational dashboards",
+    "github": "",
+    "liveSite": "",
+    "team": "Roxanne Locsin, Mark Vincent Limpahan, Rhenel Jhon Sajol"
+  },
+  {
+    "id": "personal-working",
+    "name": "[WORKING] — Food Discovery & Memory Mapping Platform (Ongoing Project)",
+    "year": "2026 - ongoing",
+    "category": "Personal",
+    "shortDescription": "[WORKING] is a food exploration and journaling platform that transforms restaurant visits into a visual collection of personal experiences. Through an interactive map system, users discover restaurants and gradually unlock visited locations, turning an initially gray map into a colorful representation of their food journey and memories.",
+    "role": "Developer",
+    "outcome": "Designed and contributed to the development of an experience-driven platform concept that combines restaurant discovery, location interaction, journaling, and personal progression into a unique food exploration experience.",
+    "techStack": [
+      "React",
+      "Leaflet",
+      "TailwindCSS",
+      "MySQL",
+      "OpenStreetMap",
+      "Cloudinary"
+    ],
+    "detailedDescription": "[WORKING] is an ongoing web application project developed to redefine food discovery by combining restaurant exploration with personal journaling and collection mechanics. Instead of focusing only on finding places to eat, the platform encourages users to document experiences and visualize their dining history through an evolving personal food map.\r\n\r\nUsers can explore restaurants publicly without an account, while registered users unlock visited locations through verified check-ins and gradually build a personalized map of memories and food experiences.\r\n\r\nMy Contributions\r\nContributed to product planning and feature conceptualization\r\nDeveloped and refined frontend interfaces and user interactions\r\nParticipated in designing map-based user experiences\r\nSupported implementation planning for discovery and journaling workflows\r\nCollaborated on usability improvements and platform structure\r\nAssisted in shaping the overall product vision and experience\r\n\r\nKey Features\r\nInteractive food discovery map\r\nRestaurant filtering and search\r\nPersonal unlockable food map progression\r\nFood diary and memory journaling\r\nReviews and restaurant experiences\r\nAchievement and collection tracking\r\nOptional social and collaborative experiences\r\nVisit verification through GPS, receipt upload, or check-in",
+    "futureWorks": "Deploy the first public web release\r\nExpand into a dedicated mobile application (Android & iOS)\r\nImprove real-time map interaction and synchronization\r\nIntroduce collaborative maps and social experiences\r\nAdd recommendation intelligence and personalized food insights\r\nEnhance restaurant contribution and moderation systems\r\n\r\nLive Prototype\r\n(working project)\r\n\r\nGitHub\r\n(private / ongoing)",
+    "github": "",
+    "liveSite": "",
+    "team": "Roxanne Locsin, Carmeli Jean Marie Gadrinab"
+  }
+]

@@ -1,252 +1,203 @@
-import { BookOpen, BriefcaseBusiness, Clock3, GraduationCap, MapPinned, Sparkles } from "lucide-react"
+import React from "react"
+import { About } from "./About"
 
-import portrait from "@/assets/Roxanne.png"
+type HeroProps = {
+  isAboutOpen: boolean
+  setIsAboutOpen: (val: boolean) => void
+}
 
-function Hero() {
-	const cards = [
-		{
-			gradient: "from-[#F2322E] to-[#EF4444]",
-			icon: (
-				<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-					<path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-				</svg>
-			),
-			title: "Core Interests",
-			content: (
-				<ul className="space-y-1.5">
-					{["Web Development", "Software Engineering", "System Design", "Data Visualization", "Human-Centered Design", "Research & Innovation"].map(item => (
-						<li key={item} className="flex items-center gap-2 text-sm text-white/85">
-							<span className="w-1.5 h-1.5 rounded-full bg-white/60 flex-shrink-0" />
-							{item}
-						</li>
-					))}
-				</ul>
-			),
-		},
-		{
-			gradient: "from-[#F59E0B] to-[#FFB436]",
-			icon: (
-				<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-					<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-				</svg>
-			),
-			title: "Personal Values",
-			content: (
-				<ul className="space-y-1.5">
-					{["Continuous Learning", "Problem Solving", "Collaboration", "Attention to Detail", "Building Useful Solutions"].map(item => (
-						<li key={item} className="flex items-center gap-2 text-sm text-white/85">
-							<span className="w-1.5 h-1.5 rounded-full bg-white/60 flex-shrink-0" />
-							{item}
-						</li>
-					))}
-				</ul>
-			),
-		},
-		{
-			gradient: "from-[#EA580C] to-[#F97316]",
-			icon: (
-				<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-					<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
-				</svg>
-			),
-			title: "Tech Stacks",
-			content: (
-				<div className="flex flex-wrap gap-1.5 justify-center">
-					{["React", "Vite", "Tailwind CSS", "Python", "JavaScript", "TypeScript"].map(item => (
-						<span key={item} className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-white/15 text-white border border-white/20">
-							{item}
-						</span>
-					))}
-				</div>
-			),
-		},
-	]
+function Hero({ isAboutOpen, setIsAboutOpen }: HeroProps) {
+  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault()
+    const element = document.querySelector(targetId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
+  }
 
-	return (
-		<section className="px-4 pb-16 pt-4 sm:px-6 lg:px-8 lg:pb-24 lg:pt-6">
-			<style>{`
-				.name-animate {
-					background: linear-gradient(90deg, #374151 0%, #6B7280 30%, #DC2626 65%, #F59E0B 100%);
-					background-size: 200% 100%;
-					-webkit-background-clip: text;
-					background-clip: text;
-					color: transparent;
-					animation: nameShift 9s linear infinite;
-					display: inline-block;
-				}
+  return (
+    <section id="hero" className="relative min-h-[550px] md:min-h-[650px] lg:min-h-[700px] px-6 md:px-12 lg:px-24 py-12 md:py-16 lg:py-20 overflow-hidden bg-background flex items-center justify-center">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-60 pointer-events-none" />
 
-				.dark .name-animate {
-					background: linear-gradient(90deg, #F3F4F6 0%, #FBBF24 40%, #EF4444 70%, #F3F4F6 100%);
-					background-size: 200% 100%;
-					-webkit-background-clip: text;
-					background-clip: text;
-					color: transparent;
-					animation: nameShift 9s linear infinite;
-				}
+      {/* Transition container */}
+      <div className="max-w-[85rem] mx-auto w-full relative">
 
-				@keyframes nameShift {
-					0%   { background-position: 0% 50%; }
-					50%  { background-position: 100% 50%; }
-					100% { background-position: 0% 50%; }
-				}
+        {/* FRONT FACE (Hero Details) */}
+        <div
+          className={`w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10 transition-all duration-700 ease-in-out ${isAboutOpen
+            ? "opacity-0 scale-95 pointer-events-none blur-sm"
+            : "opacity-100 scale-100 pointer-events-auto blur-none"
+            }`}
+        >
+          {/* Left Side Content */}
+          <div className="lg:col-span-6 space-y-8 fade-up text-left">
+            <div className="space-y-4">
+              <h1 className="font-heading text-5xl md:text-7xl font-extrabold tracking-tight text-foreground leading-[1.1]">
+                ROXANNE <br />
+                <span className="text-primary">LOCSIN</span>
+              </h1>
+              <p className="font-sans text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed font-medium">
+                Building practical systems, research-driven projects, and meaningful digital experiences.
+              </p>
+            </div>
 
-				.stat-card::after {
-					content: "";
-					position: absolute;
-					inset: 0;
-					background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-					pointer-events: none;
-					border-radius: inherit;
-					opacity: 0.5;
-				}
+            <div className="flex flex-wrap gap-4 pt-2">
+              <a
+                href="#projects"
+                onClick={(e) => handleScrollTo(e, "#projects")}
+                className="px-8 py-3.5 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover-lift hover:shadow-[0_12px_24px_rgba(180,35,24,0.25)] transition-all cursor-pointer pointer-events-auto"
+              >
+                View Projects
+              </a>
+              <button
+                onClick={() => setIsAboutOpen(true)}
+                className="px-8 py-3.5 rounded-full border border-border bg-card/40 hover:bg-card text-foreground font-semibold text-sm hover-lift transition-all cursor-pointer pointer-events-auto"
+              >
+                About Me
+              </button>
+            </div>
+          </div>
 
-				.stat-icon-wrap {
-					position: absolute;
-					top: 16px;
-					left: 16px;
-					width: 40px;
-					height: 40px;
-					border-radius: 10px;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					background: rgba(255,255,255,0.15);
-					border: 1px solid rgba(255,255,255,0.2);
-					z-index: 2;
-					transition: transform 600ms cubic-bezier(.2,.9,.25,1), opacity 400ms ease;
-				}
+          {/* Right Side Composition */}
+          <div className="lg:col-span-6 relative w-full h-[400px] md:h-[500px] flex items-center justify-center fade-up pointer-events-none">
+            {/* Subtle Geometric Background Lines */}
+            <svg
+              className="absolute inset-0 w-full h-full text-border/40 stroke-current"
+              viewBox="0 0 500 500"
+              fill="none"
+            >
+              {/* Connecting lines */}
+              <path
+                d="M100 250 L250 120 L400 250 L250 380 Z"
+                strokeDasharray="6 6"
+                strokeWidth="1.5"
+              />
+              <path d="M50 250 H450" strokeWidth="1" strokeDasharray="4 8" />
+              <path d="M250 50 V450" strokeWidth="1" strokeDasharray="4 8" />
+              {/* Soft gold focus ring */}
+              <circle cx="250" cy="250" r="140" stroke="url(#goldGradient)" strokeWidth="1" />
 
-				.stat-card:hover .stat-icon-wrap {
-					transform: translateY(-180%);
-					opacity: 0;
-				}
+              <defs>
+                <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#D4A017" stopOpacity="0.3" />
+                  <stop offset="50%" stopColor="#B42318" stopOpacity="0.1" />
+                  <stop offset="100%" stopColor="#D4A017" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+            </svg>
 
-				.card-title {
-					position: absolute;
-					left: 50%;
-					top: 50%;
-					transform: translate(-50%, -50%);
-					margin: 0;
-					z-index: 1;
-					font-size: 0.9rem;
-					font-weight: 700;
-					letter-spacing: .1em;
-					text-transform: uppercase;
-					color: white;
-					white-space: nowrap;
-					transition: top 650ms cubic-bezier(.2,.9,.25,1), transform 650ms cubic-bezier(.2,.9,.25,1);
-					text-shadow: 0 1px 8px rgba(0,0,0,0.2);
-				}
+            {/* Floating dots wrapper */}
+            <div className="absolute inset-0">
+              {/* Animating tiny dots */}
+              <div className="absolute top-[20%] left-[30%] w-2 h-2 rounded-full bg-accent opacity-50 animate-ping [animation-duration:3s]" />
+              <div className="absolute top-[70%] left-[20%] w-1.5 h-1.5 rounded-full bg-primary opacity-40 animate-pulse" />
+              <div className="absolute top-[40%] right-[25%] w-2.5 h-2.5 rounded-full bg-primary/20 border border-primary/40 animate-pulse [animation-duration:4s]" />
+              <div className="absolute bottom-[30%] right-[35%] w-1.5 h-1.5 rounded-full bg-accent opacity-60 animate-ping [animation-duration:5s]" />
+            </div>
 
-				.stat-card:hover .card-title {
-					top: 20px;
-					transform: translate(-50%, 0);
-				}
+            {/* Floating Project Cards */}
 
-				.card-content {
-					position: absolute;
-					left: 16px;
-					right: 16px;
-					bottom: 16px;
-					top: 52px;
-					opacity: 0;
-					transform: translateY(10px);
-					z-index: 1;
-					transition: opacity 800ms cubic-bezier(.2,.9,.25,1) 50ms,
-					            transform 800ms cubic-bezier(.2,.9,.25,1) 50ms;
-					pointer-events: none;
-					display: flex;
-					align-items: flex-start;
-				}
+            {/* Card 1: Audio Signal Waveform */}
+            <div
+              className="absolute top-[12%] left-[10%] w-[180px] bg-card/90 border border-border/80 rounded-xl p-4 shadow-lg hover-lift backdrop-blur-md animate-[float_6s_ease-in-out_infinite]"
+              style={{ animationDelay: "0s" }}
+            >
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[10px] uppercase font-bold tracking-widest text-accent">DSP Analysis</span>
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              </div>
+              <p className="text-xs font-heading font-bold text-foreground">Audio Compression</p>
+              <div className="mt-3 flex items-end gap-[2px] h-8 w-full bg-muted/40 rounded px-1.5 py-1">
+                <span className="w-1.5 h-3 bg-primary/80 rounded-t animate-[wave_1.5s_ease-in-out_infinite_alternate]" />
+                <span className="w-1.5 h-6 bg-primary/80 rounded-t animate-[wave_1.2s_ease-in-out_infinite_alternate]" />
+                <span className="w-1.5 h-4 bg-primary/80 rounded-t animate-[wave_1.7s_ease-in-out_infinite_alternate]" />
+                <span className="w-1.5 h-7 bg-primary/80 rounded-t animate-[wave_1.4s_ease-in-out_infinite_alternate]" />
+                <span className="w-1.5 h-2 bg-primary/80 rounded-t animate-[wave_1.9s_ease-in-out_infinite_alternate]" />
+                <span className="w-1.5 h-5 bg-primary/80 rounded-t animate-[wave_1.1s_ease-in-out_infinite_alternate]" />
+              </div>
+            </div>
 
-				.stat-card:hover .card-content {
-					opacity: 1;
-					transform: translateY(0);
-					pointer-events: auto;
-				}
+            {/* Card 2: Graphing Coordinate Chart */}
+            <div
+              className="absolute top-[48%] right-[10%] w-[200px] bg-card/90 border border-border/80 rounded-xl p-4 shadow-lg hover-lift backdrop-blur-md animate-[float_7s_ease-in-out_infinite]"
+              style={{ animationDelay: "1.5s" }}
+            >
+              <div className="flex items-center justify-between mb-1.5">
+                <span className="text-[10px] uppercase font-bold tracking-widest text-primary">Renderer</span>
+                <span className="text-[10px] text-muted-foreground font-mono">y=sin(x)</span>
+              </div>
+              <p className="text-xs font-heading font-bold text-foreground">Graphing Engine</p>
+              {/* Coordinate mesh visualization */}
+              <div className="mt-2.5 h-12 w-full bg-muted/40 rounded border border-border/30 relative overflow-hidden flex items-center justify-center">
+                <div className="absolute inset-0 bg-[radial-gradient(#80808010_1px,transparent_1px)] bg-[size:8px_8px]" />
+                {/* sine path line */}
+                <svg className="w-full h-full text-accent" viewBox="0 0 100 40">
+                  <path
+                    d="M0,20 Q25,5 50,20 T100,20"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeDasharray="100"
+                    className="animate-[draw_2s_linear_infinite]"
+                  />
+                </svg>
+              </div>
+            </div>
 
-				.dot-accent {
-					width: 6px;
-					height: 6px;
-					border-radius: 9999px;
-					background: rgba(255,255,255,0.7);
-					flex-shrink: 0;
-				}
-			`}</style>
+            {/* Card 3: Dashboard Stats Panel */}
+            <div
+              className="absolute bottom-[10%] left-[20%] w-[190px] bg-card/95 border border-border/80 rounded-xl p-4 shadow-lg hover-lift backdrop-blur-md animate-[float_6.5s_ease-in-out_infinite]"
+              style={{ animationDelay: "0.8s" }}
+            >
+              <span className="text-[10px] uppercase font-bold tracking-widest text-muted-foreground block mb-1">Server Monitor</span>
+              <p className="text-xs font-heading font-bold text-foreground mb-3">System / Dashboard</p>
 
-			<div className="mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-36">
-				{/* Left column */}
-				<div className="flex flex-col items-center gap-4">
-					<div className="relative h-[18rem] w-[18rem] rounded-full bg-[#F59E0B] shadow-[0_20px_60px_rgba(249,115,22,0.18)] sm:h-[22rem] sm:w-[22rem] lg:h-[25rem] lg:w-[25rem]">
-						<div className="absolute inset-[10px] rounded-full border border-white/20 bg-white/10 backdrop-blur-sm" />
-						<div className="absolute inset-[18px] overflow-hidden rounded-full border border-black/5 bg-[#F59E0B]">
-							<img
-								src={portrait}
-								alt="Roxanne Locsin portrait"
-								className="h-full w-full object-cover object-center scale-[1.02]"
-							/>
-						</div>
-					</div>
+              <div className="grid grid-cols-2 gap-2 text-left">
+                <div className="bg-muted/50 p-2 rounded">
+                  <span className="text-[8px] text-muted-foreground block">Latency</span>
+                  <span className="text-xs font-bold text-foreground">12ms</span>
+                </div>
+                <div className="bg-muted/50 p-2 rounded">
+                  <span className="text-[8px] text-muted-foreground block">Queries</span>
+                  <span className="text-xs font-bold text-primary">99.9%</span>
+                </div>
+              </div>
+            </div>
 
-					<div className="flex flex-wrap items-center justify-center gap-3 w-full max-w-[28rem] mx-auto">
-						{[
-							{ icon: <Clock3 className="h-4 w-4" />, label: "Based in the Philippines" },
-							{ icon: <GraduationCap className="h-4 w-4" />, label: "BS Computer Science" },
-							{ icon: <MapPinned className="h-4 w-4" />, label: "USTP - CDO" },
-							{ icon: <BriefcaseBusiness className="h-4 w-4" />, label: "Open to Internships" },
-							{ icon: <Sparkles className="h-4 w-4" />, label: "Entry-Level Opportunities" },
-							{ icon: <BookOpen className="h-4 w-4" />, label: "Software Engineering" },
-						].map(({ icon, label }) => (
-							<span
-								key={label}
-								className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-card/80 px-4 py-2 text-sm font-medium text-[#6B7280]"
-							>
-								<span className="text-[#F59E0B] dark:text-[#FBBF24]">{icon}</span>
-								{label}
-							</span>
-						))}
-					</div>
-				</div>
+            {/* Core node center */}
+            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/30 flex items-center justify-center animate-pulse">
+              <div className="w-16 h-16 rounded-full bg-card shadow-inner border border-border flex items-center justify-center">
+                <span className="font-heading text-lg font-black text-primary">R</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-				{/* Right column */}
-				<div className="space-y-8">
-					<div className="space-y-4">
-						<h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-							<span className="name-animate">Roxanne Locsin</span>
-						</h1>
-					</div>
+        {/* BACK FACE (About Story) */}
+        <div
+          className={`absolute inset-0 w-full h-full flex items-center transition-all duration-700 ease-in-out ${isAboutOpen
+            ? "opacity-100 scale-100 pointer-events-auto blur-none"
+            : "opacity-0 scale-95 pointer-events-none blur-sm"
+            }`}
+        >
+          <About onFlipBack={() => setIsAboutOpen(false)} />
+        </div>
 
-					<div className="prose max-w-2xl text-base leading-7 text-foreground/90 sm:text-lg">
-						<p className="mb-6">
-							I am a Computer Science student passionate about building practical software solutions that create real value for users. My experience includes developing web applications, academic systems, data-driven projects, and research initiatives focused on solving complex problems through technology.
-						</p>
-						<p>
-							I enjoy combining technical knowledge with creativity to design applications that are functional, efficient, and user-friendly. As I continue to grow as a developer, I am committed to learning new technologies, improving my craft, and contributing to projects that make a meaningful impact.
-						</p>
-					</div>
+      </div>
 
-					{/* Cards */}
-					<div className="grid grid-cols-3 gap-4">
-						{cards.map(({ gradient, icon, title, content }) => (
-							<div
-								key={title}
-								className={`stat-card group relative rounded-xl border border-white/60 bg-gradient-to-br ${gradient} shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:scale-[1.02] w-full aspect-[4/5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white/70`}
-							>
-								<div className="stat-icon-wrap">{icon}</div>
-								<h3 className="card-title">{title}</h3>
-								<div className="card-content">{content}</div>
-							</div>
-						))}
-					</div>
-				</div>
-			</div>
-			<div className="mx-auto mt-14 max-w-7xl">
-				<div id="about" className="sr-only">About</div>
-				<div id="skills" className="sr-only">Skills</div>
-				<div id="projects" className="sr-only">Projects</div>
-			</div>
-		</section>
-	)
+      {/* Encapsulated animations */}
+      <style>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-12px) rotate(0.5deg); }
+        }
+        @keyframes wave {
+          0% { height: 10%; }
+          100% { height: 90%; }
+        }
+      `}</style>
+    </section>
+  )
 }
 
 export { Hero }
