@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const docPath = path.join(__dirname, '../../docs/projects.md');
+const docPath = path.join(__dirname, '../docs/projects.md');
 const outputPath = path.join(__dirname, '../src/data/projects.json');
 
 function parseMarkdown() {
