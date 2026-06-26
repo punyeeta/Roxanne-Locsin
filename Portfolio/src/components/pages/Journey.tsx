@@ -52,7 +52,7 @@ function Journey() {
     const nextState = !isExpanded
     setIsExpanded(nextState)
     if (!nextState) {
-      const journeySection = document.getElementById("timeline")
+      const journeySection = document.getElementById("journey")
       if (journeySection) {
         journeySection.scrollIntoView({ behavior: "smooth" })
       }
@@ -60,11 +60,11 @@ function Journey() {
   }
 
   return (
-    <section id="timeline" className="py-12 px-6 md:px-12 lg:px-24 bg-card/20 relative border-t border-border/10 scroll-mt-20">
+    <section id="journey" className="py-12 px-6 md:px-12 lg:px-24 bg-card/20 relative border-t border-border/10 scroll-mt-20">
       <div className="max-w-[85rem] mx-auto space-y-12">
         <div className="space-y-2 text-left">
-          <span className="text-sm uppercase tracking-[0.2em] font-bold text-accent">Timeline</span>
-          <h2 className="font-heading text-4xl md:text-5xl font-extrabold tracking-tight text-foreground">
+          <span className="text-xs uppercase tracking-[0.2em] font-bold text-accent">Timeline</span>
+          <h2 className="font-heading text-3xl md:text-4xl font-extrabold tracking-tight text-foreground">
             My Journey
           </h2>
         </div>
@@ -80,10 +80,20 @@ function Journey() {
             </h3>
 
             <div className="relative border-l border-border/60 pl-8 ml-4 lg:ml-6 space-y-8">
-              {displayedPersonal.map((step) => (
+              {displayedPersonal.map((step, idx) => (
                 <div key={step.year} className="relative group text-left fade-up">
-                  {/* Timeline indicator node */}
-                  <div className="absolute -left-[38px] top-1.5 w-4 h-4 rounded-full bg-background border-2 border-primary group-hover:bg-accent group-hover:border-accent transition-all duration-300 shadow-sm" />
+                  {/* toggle tool */}
+                  {idx === 0 ? (
+                    <button
+                      onClick={handleToggle}
+                      className="absolute -left-[38px] top-1.5 w-4 h-4 rounded-full bg-background border-2 border-primary hover:border-accent hover:bg-accent/15 transition-all duration-300 shadow-sm flex items-center justify-center cursor-pointer text-primary hover:text-accent font-heading font-extrabold text-[10px] z-10"
+                      title={isExpanded ? "Collapse Timeline" : "Reveal full journey (2023 - 2025)"}
+                    >
+                      {isExpanded}
+                    </button>
+                  ) : (
+                    <div className="absolute -left-[38px] top-1.5 w-4 h-4 rounded-full bg-background border-2 border-primary group-hover:bg-accent group-hover:border-accent transition-all duration-300 shadow-sm" />
+                  )}
 
                   <div className="space-y-2">
                     {/* Year Badge */}
