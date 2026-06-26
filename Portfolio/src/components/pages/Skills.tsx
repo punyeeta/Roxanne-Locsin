@@ -47,8 +47,8 @@ function Skills() {
           {/* Left Column */}
           <div className="lg:col-span-5 space-y-8 text-left">
             <div className="space-y-2">
-              <span className="text-sm uppercase tracking-[0.2em] font-bold text-accent">Technical Toolkit</span>
-              <h2 className="font-heading text-4xl md:text-5xl font-extrabold tracking-tight text-foreground">
+              <span className="text-xs uppercase tracking-[0.2em] font-bold text-accent">Technical Toolkit</span>
+              <h2 className="font-heading text-3xl md:text-4xl font-extrabold tracking-tight text-foreground">
                 Skills & Abilities
               </h2>
             </div>
@@ -90,8 +90,8 @@ function Skills() {
           {/* Right Column */}
           <div className="lg:col-span-7 space-y-8 text-left">
             <div className="space-y-2">
-              <span className="text-sm uppercase tracking-[0.2em] font-bold text-accent">Qualifications</span>
-              <h2 className="font-heading text-4xl md:text-5xl font-extrabold tracking-tight text-foreground">
+              <span className="text-xs uppercase tracking-[0.2em] font-bold text-accent">Qualifications</span>
+              <h2 className="font-heading text-3xl md:text-4xl font-extrabold tracking-tight text-foreground">
                 Curriculum Vitae
               </h2>
             </div>
