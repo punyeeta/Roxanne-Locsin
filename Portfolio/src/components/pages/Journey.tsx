@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 type JourneyStep = {
   year: string
   title: string
@@ -6,69 +8,154 @@ type JourneyStep = {
 }
 
 function Journey() {
-  const steps: JourneyStep[] = [
+  const [isExpanded, setIsExpanded] = useState(false)
+
+  const personalSteps: JourneyStep[] = [
     {
-      year: "2024",
-      title: "Exploration & Foundation",
-      subtitle: "Understanding Algorithms",
-      description:
-        "Started exploring full-stack project builds and grounding core theoretical concepts in algorithms and system logic. Built early utility utilities and web scripts.",
+      year: "2026",
+      title: "Specialization",
+      subtitle: "Emerging Technologies and Continuous Learning",
+      description: "Currently exploring machine learning, advancing in full-stack development, conducting research, and expanding across multiple areas of computer science."
     },
     {
       year: "2025",
-      title: "Academic & Research Systems",
-      subtitle: "Focus on Performance",
-      description:
-        "Developed custom research-driven software and academic engines. Delved into digital signal processing (DSP), high-volume coordinates drawing, and dashboard UI architectures.",
+      title: "Exploration",
+      subtitle: "Development, Research, and Practical Applications",
+      description: "Started building full-stack projects, explored frontend development, and applied technical knowledge through research and practical systems."
     },
     {
-      year: "2026",
-      title: "Refinement & Industry Preparation",
-      subtitle: "Software Systems Architecture",
-      description:
-        "Refining complex digital systems, focusing on performance, modular design, and robust codebases. Preparing for collaborative development and technical internships.",
+      year: "2024",
+      title: "Growth",
+      subtitle: "Systems, Logic, and User Experience",
+      description: "Developed skills in software design, logical thinking, data management, and user-focused development."
     },
+    {
+      year: "2023",
+      title: "Foundations",
+      subtitle: "Core Computing and Technical Fundamentals",
+      description: "Built foundational knowledge in computer science, problem-solving, and software development."
+    }
   ]
 
+  const professionalSteps: JourneyStep[] = [
+    {
+      year: "June 2026 - July 2026",
+      title: "CerebroX (Internship)",
+      subtitle: "Development and Quality Assurance",
+      description: "Contributed to feature development, debugging, testing, and system improvements, supporting reliability, functionality, and overall user experience."
+    }
+  ]
+
+  const displayedPersonal = isExpanded ? personalSteps : personalSteps.slice(0, 1)
+
+  const handleToggle = () => {
+    const nextState = !isExpanded
+    setIsExpanded(nextState)
+    if (!nextState) {
+      const journeySection = document.getElementById("journey")
+      if (journeySection) {
+        journeySection.scrollIntoView({ behavior: "smooth" })
+      }
+    }
+  }
+
   return (
-    <section id="journey" className="py-24 px-6 md:px-12 lg:px-24 bg-card/20 relative border-t border-border/10 scroll-mt-20">
-      <div className="max-w-4xl mx-auto space-y-16">
-        {/* Section Title */}
-        <div className="space-y-2 text-center lg:text-left">
-          <span className="text-xs uppercase tracking-[0.2em] font-bold text-accent">Personal Timeline</span>
-          <h2 className="font-heading text-3xl md:text-4xl font-extrabold tracking-tight text-foreground">
+    <section id="journey" className="py-12 px-6 md:px-12 lg:px-24 bg-card/20 relative border-t border-border/10 scroll-mt-20">
+      <div className="max-w-[85rem] mx-auto space-y-12">
+        <div className="space-y-2 text-left">
+          <span className="text-sm uppercase tracking-[0.2em] font-bold text-accent">Timeline</span>
+          <h2 className="font-heading text-4xl md:text-5xl font-extrabold tracking-tight text-foreground">
             My Journey
           </h2>
         </div>
 
-        {/* Timeline body */}
-        <div className="relative border-l border-border/60 pl-8 ml-4 lg:ml-6 space-y-12">
-          {steps.map((step, idx) => (
-            <div key={idx} className="relative group text-left">
-              {/* Timeline indicator node */}
-              <div className="absolute -left-[38px] top-1.5 w-4 h-4 rounded-full bg-background border-2 border-primary group-hover:bg-accent group-hover:border-accent transition-all duration-300 shadow-sm" />
-              
-              <div className="space-y-2">
-                {/* Year Badge */}
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-muted border border-border/40 text-xs font-bold text-primary font-heading tracking-wide">
-                  {step.year}
-                </div>
-                
-                <div className="space-y-1">
-                  <h3 className="font-heading text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                    {step.title}
-                  </h3>
-                  <p className="text-xs text-accent font-semibold tracking-wider uppercase font-sans">
-                    {step.subtitle}
-                  </p>
-                </div>
+        {/* Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
 
-                <p className="font-sans text-sm text-muted-foreground leading-relaxed max-w-2xl pt-1">
-                  {step.description}
-                </p>
+          {/* Column 1 */}
+          <div className="space-y-8">
+            <h3 className="font-heading text-xl font-bold text-foreground border-b border-border/10 pb-3 flex items-center gap-2 text-left">
+              <span className="w-1.5 h-6 bg-primary rounded-full" />
+              Personal Journey
+            </h3>
+
+            <div className="relative border-l border-border/60 pl-8 ml-4 lg:ml-6 space-y-8">
+              {displayedPersonal.map((step) => (
+                <div key={step.year} className="relative group text-left fade-up">
+                  {/* Timeline indicator node */}
+                  <div className="absolute -left-[38px] top-1.5 w-4 h-4 rounded-full bg-background border-2 border-primary group-hover:bg-accent group-hover:border-accent transition-all duration-300 shadow-sm" />
+
+                  <div className="space-y-2">
+                    {/* Year Badge */}
+                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-muted border border-border/40 text-xs font-bold text-primary font-heading tracking-wide">
+                      {step.year}
+                    </div>
+
+                    <div className="space-y-1">
+                      <h4 className="font-heading text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                        {step.title}
+                      </h4>
+                      <p className="text-xs text-accent font-semibold tracking-wider uppercase font-sans">
+                        {step.subtitle}
+                      </p>
+                    </div>
+
+                    <p className="font-sans text-sm text-muted-foreground leading-relaxed max-w-xl pt-0.5">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+
+              {/* Reveal/Collapse Controller */}
+              <div className="relative group text-left pt-2">
+                <button
+                  onClick={handleToggle}
+                  className="text-xs uppercase tracking-wider font-bold text-accent hover:text-primary transition-colors cursor-pointer text-left"
+                >
+                  {isExpanded ? "Collapse Timeline" : "Reveal full journey (2023 - 2025)"}
+                </button>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Column 2: Professional Journey */}
+          <div className="space-y-8">
+            <h3 className="font-heading text-xl font-bold text-foreground border-b border-border/10 pb-3 flex items-center gap-2 text-left">
+              <span className="w-1.5 h-6 bg-accent rounded-full" />
+              Professional Journey
+            </h3>
+
+            <div className="relative border-l border-border/60 pl-8 ml-4 lg:ml-6 space-y-8">
+              {professionalSteps.map((step) => (
+                <div key={step.year} className="relative group text-left">
+                  {/* Timeline indicator node */}
+                  <div className="absolute -left-[38px] top-1.5 w-4 h-4 rounded-full bg-background border-2 border-accent group-hover:bg-primary group-hover:border-primary transition-all duration-300 shadow-sm" />
+
+                  <div className="space-y-2">
+                    {/* Year Badge */}
+                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-muted border border-border/40 text-xs font-bold text-accent font-heading tracking-wide">
+                      {step.year}
+                    </div>
+
+                    <div className="space-y-1">
+                      <h4 className="font-heading text-lg font-bold text-foreground group-hover:text-accent transition-colors">
+                        {step.title}
+                      </h4>
+                      <p className="text-xs text-primary font-semibold tracking-wider uppercase font-sans">
+                        {step.subtitle}
+                      </p>
+                    </div>
+
+                    <p className="font-sans text-sm text-muted-foreground leading-relaxed max-w-xl pt-0.5">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ function Footer() {
   const currentYear = new Date().getFullYear()
 
   const socialLinks = [
-    { icon: <Mail className="size-4" />, href: "mailto:roxannelocsin@example.com" },
+    { icon: <Mail className="size-4" />, href: "mailto:locsin.roxanne235@gmail.com" },
     {
       icon: (
         <svg className="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -12,7 +12,7 @@ function Footer() {
           <path d="M9 18c-4.51 2-5-2-7-2" />
         </svg>
       ),
-      href: "https://github.com/roxannelocsin",
+      href: "https://github.com/punyeeta",
     },
     {
       icon: (
@@ -22,24 +22,20 @@ function Footer() {
           <circle cx="4" cy="4" r="2" />
         </svg>
       ),
-      href: "https://linkedin.com/in/roxannelocsin",
+      href: "https://www.linkedin.com/in/roxanne-locsin-02855734b/",
     },
   ]
 
   return (
     <footer className="py-12 px-6 md:px-12 lg:px-24 bg-card/10 border-t border-border/10">
       <div className="max-w-[85rem] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        {/* Left Side Branding & Note */}
+        {/* Left Side */}
         <div className="flex items-center gap-4 text-left">
           <span className="font-heading text-lg font-black text-primary">R.</span>
-          <span className="text-xs text-muted-foreground font-medium">
-            Designed and developed with intention.
-          </span>
         </div>
 
-        {/* Right Side Social Links & Copyright */}
+        {/* Right Side */}
         <div className="flex flex-col md:flex-row items-center gap-6">
-          {/* Social icons */}
           <div className="flex items-center gap-4">
             {socialLinks.map((link, idx) => (
               <a

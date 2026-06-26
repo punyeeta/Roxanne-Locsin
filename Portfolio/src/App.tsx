@@ -7,7 +7,6 @@ import { ProjectsListPage } from "@/components/pages/ProjectsListPage"
 import { ProjectDetailPage } from "@/components/pages/ProjectDetailPage"
 import { Journey } from "@/components/pages/Journey"
 import { Skills } from "@/components/pages/Skills"
-import { Resume } from "@/components/pages/Resume"
 import { Contact } from "@/components/pages/Contact"
 import { Footer } from "@/components/ui/Footer"
 
@@ -157,7 +156,6 @@ function App() {
             <Projects />
             <Journey />
             <Skills />
-            <Resume />
             <Contact />
           </>
         )}

@@ -11,25 +11,25 @@ function About({ onFlipBack }: AboutProps) {
       icon: <GraduationCap className="size-4 text-accent" />,
       label: "Education",
       value: "Computer Science",
-      desc: "USTP - CDO",
+      desc: "USTP – CDO",
     },
     {
       icon: <Code2 className="size-4 text-primary" />,
       label: "Focus",
-      value: "Software Systems",
-      desc: "Architectures & Logic",
+      value: "Frontend Development",
+      desc: "Full-Stack • Research & System Design",
     },
     {
       icon: <Sparkles className="size-4 text-accent" />,
       label: "Interest",
       value: "Building useful things",
-      desc: "UX & Tooling",
+      desc: "User Experience • Exploring Tech",
     },
     {
       icon: <Briefcase className="size-4 text-primary" />,
       label: "Status",
       value: "Open to opportunities",
-      desc: "Internships & Collabs",
+      desc: "Internships • Collabs • Projects",
     },
   ]
 
@@ -53,10 +53,13 @@ function About({ onFlipBack }: AboutProps) {
 
         <div className="font-sans text-sm md:text-base text-muted-foreground leading-relaxed space-y-3">
           <p>
-            I am a Computer Science student driven by the intersection of rigorous research and practical application. I focus on developing clean, performance-optimized, and well-structured software systems.
+            I'm a Computer Science student who enjoys turning ideas into working systems, from research projects to web applications that solve real problems.
           </p>
           <p>
-            Whether optimizing compression scripts, rendering mathematical models, or building dashboard UI pipelines, I center my process on usability and architectural intent.
+            I enjoy understanding how things work, improving user experiences, and creating clean and purposeful solutions. My work mainly focuses on frontend development, full-stack exploration, research, and discovering different areas of computer science.
+          </p>
+          <p>
+            Outside development, I like learning through building and creating projects that are both functional and meaningful.
           </p>
         </div>
 
@@ -88,7 +91,7 @@ function About({ onFlipBack }: AboutProps) {
         {/* Tagline */}
         <div className="border-t border-border/10 pt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <p className="font-heading text-base font-bold italic text-primary">
-            "Build intentionally. Learn continuously."
+            "Build with purpose. Keep learning."
           </p>
         </div>
       </div>

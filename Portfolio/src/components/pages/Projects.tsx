@@ -70,12 +70,12 @@ function Projects() {
 
     displayedProjects = featured as ProjectData[]
   } else {
-    // Filter by selected category, sorted newest to oldest, maximum of 3
+    // Filter by selected category
     const filtered = projectsData
       .filter(p => p.category === activeFilter)
       .sort((a, b) => parseInt(b.year) - parseInt(a.year))
 
-    // For Academic, show: EHCo, Hi-Lite Studio, HapagTech (formerly Kangina)
+    // For Academic
     if (activeFilter === "Academic") {
       const order = ["ehco", "hi-lite-studio", "hapagtech"]
       order.forEach(keyword => {
@@ -103,7 +103,7 @@ function Projects() {
   }
 
   return (
-    <section id="projects" className="py-12 px-6 md:px-12 lg:px-24 bg-background scroll-mt-20">
+    <section id="projects" className="py-14 px-6 md:px-12 lg:px-24 bg-background scroll-mt-20">
       <div className="max-w-[85rem] mx-auto space-y-8">
         {/* Header Layout */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -119,8 +119,8 @@ function Projects() {
             <button
               onClick={() => handleFilterClick(null)}
               className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-full border transition-all cursor-pointer ${activeFilter === null
-                  ? "bg-primary border-primary text-primary-foreground"
-                  : "bg-card border-border hover:border-primary/50 text-foreground"
+                ? "bg-primary border-primary text-primary-foreground"
+                : "bg-card border-border hover:border-primary/50 text-foreground"
                 }`}
             >
               Featured
@@ -128,8 +128,8 @@ function Projects() {
             <button
               onClick={() => handleFilterClick("Academic")}
               className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-full border transition-all cursor-pointer ${activeFilter === "Academic"
-                  ? "bg-primary border-primary text-primary-foreground"
-                  : "bg-card border-border hover:border-primary/50 text-foreground"
+                ? "bg-primary border-primary text-primary-foreground"
+                : "bg-card border-border hover:border-primary/50 text-foreground"
                 }`}
             >
               Academic
@@ -137,8 +137,8 @@ function Projects() {
             <button
               onClick={() => handleFilterClick("Professional")}
               className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-full border transition-all cursor-pointer ${activeFilter === "Professional"
-                  ? "bg-primary border-primary text-primary-foreground"
-                  : "bg-card border-border hover:border-primary/50 text-foreground"
+                ? "bg-primary border-primary text-primary-foreground"
+                : "bg-card border-border hover:border-primary/50 text-foreground"
                 }`}
             >
               Professional
@@ -146,8 +146,8 @@ function Projects() {
             <button
               onClick={() => handleFilterClick("Personal")}
               className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-full border transition-all cursor-pointer ${activeFilter === "Personal"
-                  ? "bg-primary border-primary text-primary-foreground"
-                  : "bg-card border-border hover:border-primary/50 text-foreground"
+                ? "bg-primary border-primary text-primary-foreground"
+                : "bg-card border-border hover:border-primary/50 text-foreground"
                 }`}
             >
               Personal
