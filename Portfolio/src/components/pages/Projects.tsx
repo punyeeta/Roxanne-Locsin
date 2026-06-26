@@ -108,8 +108,8 @@ function Projects() {
         {/* Header Layout */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-2 text-left">
-            <span className="text-xs uppercase tracking-[0.2em] font-bold text-accent">Portfolio Showcase</span>
-            <h2 className="font-heading text-3xl md:text-4xl font-extrabold tracking-tight text-foreground">
+            <span className="text-sm uppercase tracking-[0.2em] font-bold text-accent">Portfolio Showcase</span>
+            <h2 className="font-heading text-4xl md:text-5xl font-extrabold tracking-tight text-foreground">
               Projects
             </h2>
           </div>
